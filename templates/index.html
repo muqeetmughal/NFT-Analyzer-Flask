@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,user-scalable=no" />
+    <meta name="theme-color" content="#01040C" />
+    <meta name="description" content="The YetAis are a private and exclusive collection of 8,888 yetis living on the far edges of the Solana blockchain. ." />
+
+    <title>YetAi | NFT Analyser</title>
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css" />
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="web-header">
+        <div class="row header-container">
+            <div class="header-logo-area row">
+                <img class="header-main-logo goOnThePageTOp" loading="lazy" src="{{ url_for('static', filename='images/logo.png') }}" alt="YetAi" />
+            </div>
+            <nav class="side-bar-wrapper">
+                <div class="side-logo">
+                    <img loading="lazy" src="{{ url_for('static', filename='images/logo.png') }}" alt="YetAi" />
+                </div>
+                <ul>
+                    <li>
+                        <a href="https://yetai.io" class="header-links handleNavOpenClose" data-nav="close">
+                yetAi story
+              </a>
+                    </li>
+                    <li>
+                        <a href="https://yetai.io" class="header-links handleNavOpenClose" data-nav="close">
+                Utilities
+              </a>
+                    </li>
+                    <li>
+                        <a href="https://yetai.io/lieutenant" class="header-links">
+                TRADING LIEUTENANT
+              </a>
+                    </li>
+                    <li>
+                        <a href="/" class="header-links"> ANALYSER </a>
+                    </li>
+                    <li>
+                        <a href="https://yetai.io" class="header-links handleNavOpenClose" data-nav="close">
+                Cofounders
+              </a>
+                    </li>
+                </ul>
+                <div class="social sidebar-socials row">
+                    <div class="link">
+                        <a href="https://www.instagram.com/yetai_nft/" target="_blank" class="insta row">
+                .
+              </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://twitter.com/yetai_nft" target="_blank" class="twitter row">
+                .
+              </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://discord.gg/uyaqsC7fPH" target="_blank" class="discord row">
+                .
+              </a>
+                    </div>
+                </div>
+                <div class="sidebar-close-btn handleNavOpenClose">
+                    <i class="chev-icon fa fa-chevron-right" data-nav="close" aria-hidden="true"></i>
+                    <i class="chev-icon show fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+            </nav>
+            <div class="header-right-area">
+                <div class="menu-btn">
+                    <i class="fa fa-bars show menu-icon handleNavOpenClose" aria-hidden="true" data-nav="open"></i>
+                    <i class="fa fa-times menu-icon handleNavOpenClose" aria-hidden="true" data-nav="close"></i>
+                </div>
+            </div>
+        </div>
+        <div data-nav="close" class="backdrop-sidebar handleNavOpenClose"></div>
+    </header>
+    <div class="header-spacer"></div>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main>
+        <!-- Main Input For Receiving Query to the ML -->
+
+        <div class="form_main text_center">
+            <p class="m_0">
+                This tool was developed exclusively for the Yetai community. All informa:on that this tool will provide and all informa:on specified in this document do not constitute investment advice and do not make any assessment of the price of any asset. The Yetai
+                team cannot be held responsible for any investment you decide to make, please ensure that you have assessed the risk properly before purchasing any crypto-asset. The data collection was done during a certain time slot indicated in the
+                sec:on « Data Collection ». The market can evolve and this tool may not be necessarily representative of the market’s current or future state. Please refer to the terms and conditions displayed on our website before using this tool. By
+                using our tool, you accept our terms and conditions.
+            </p>
+        </div>
+        <form class="form_main" action="{{ url_for('predict')}}" method="post">
+            <div class="cs_form_group">
+                <h3 class="text_center">NFT Analyser</h3>
+            </div>
+            <div class="cs_form_group">
+                <label for="mint_date">Mint date:</label>
+                <input class="cs_form_control" type="date" id="mint_date" name="mint_date" required="required" />
+            </div>
+            <div class="cs_form_group mid">
+                <label for="supply">Supply:</label>
+                <input class="cs_form_control" type="number" id="supply" name="supply" min="0" max="100000" step="1" value="0" required="required" />
+            </div>
+            <div class="cs_form_group mid">
+                <label for="mint_price">Mint price (in sol):</label>
+                <input class="cs_form_control" type="number" id="mint_price" name="mint_price" min="0" max="10" step="0.01" value="0" required="required" />
+            </div>
+            <div class="cs_form_group">
+                <label for="twitter_account_creation_month">Twitter account creation month:</label
+          >
+          <input
+            class="cs_form_control"
+            type="month"
+            id="twitter_account_creation_month"
+            name="twitter_account_creation_month"
+            required="required"
+          />
+        </div>
+        <div class="cs_form_group mid">
+          <label for="total_discord_members"
+            >Total number of discord members:</label
+          >
+          <input
+            class="cs_form_control"
+            type="number"
+            id="total_discord_members"
+            name="total_discord_members"
+            min="0"
+            max="1000000"
+            step="1"
+            value="0"
+            required="required"
+          />
+        </div>
+        <div class="cs_form_group mid">
+          <label for="active_discord_members"
+            >Number of active discord members:</label
+          >
+          <input
+            class="cs_form_control"
+            type="number"
+            id="active_discord_members"
+            name="active_discord_members"
+            min="0"
+            max="1000000"
+            step="1"
+            value="0"
+            required="required"
+          />
+        </div>
+        <div class="cs_form_group mid">
+          <label for="twitter_followers">Number of Twitter followers:</label>
+                <input class="cs_form_control" type="number" id="twitter_followers" name="twitter_followers" min="0" max="1000000" step="1" value="0" required="required" />
+            </div>
+            <div class="cs_form_group mid">
+                <label for="art_category">Art category:</label>
+                <select class="cs_form_control" name="art_category" id="art_category">
+            <option value="picture">picture</option>
+            <option value="pixel">pixel</option>
+            <option value="digital">digital</option>
+            <option value="art">art</option>
+            <option value="3d">3d</option>
+            <option value="photos">photos</option>
+            <option value="realistic">realistic</option>
+            <option value="cartoon">cartoon</option>
+            <option value="other">other</option>
+            <option value="animated">animated</option>
+            <option value="2d">2d</option>
+            <option value="image">image</option>
+            <option value="artifact">artifact</option>
+          </select>
+                <!--<input class="cs_form_control" type="text" name="art_category" id="art_category" placeholder="Art category" required="required" />-->
+            </div>
+
+            <button type="submit" class="cta form_btn">Predict</button>
+        </form>
+        <div class="container text_center">
+            <h4 class="text_center mx_auto colored">{{ prediction_text }}</h4>
+        </div>
+        <br />
+    </main>
+    <!-- main end -->
+
+    <!-- footer start -->
+    <br />
+    <footer class="footer">
+        <div class="container ft-top-sec row">
+            <div class="infos column">
+                <div class="picto">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="YETAi" />
+                </div>
+            </div>
+            <div class="right column">
+                <div class="social row">
+                    <div class="link">
+                        <a href="https://www.instagram.com/yetai_nft/" target="_blank" class="insta row">
+                .
+              </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://twitter.com/yetai_nft" target="_blank" class="twitter row">
+                .
+              </a>
+                    </div>
+                    <div class="link">
+                        <a href="https://discord.gg/uyaqsC7fPH" target="_blank" class="discord row">
+                .
+              </a>
+                    </div>
+                    <div></div>
+                </div>
+                <br />
+                <a href="{{ url_for('static', filename='docs/Terms and conditions.pdf') }}" target="_blank">
+            Terms & Conditions
+          </a>
+            </div>
+        </div>
+        <div class="container">
+            <p class="copyright">© <span id="currentyear"></span> YetAI</p>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- snow -->
+    <canvas id="snow-canvas"></canvas>
+    <!-- end -->
+
+    <!-- go to top -->
+    <div onClick="goToTop()" class="go-to-top" id="scrollToTop">
+        <i class="fa fa-arrow-up aria-hidden=" true></i>
+    </div>
+    <!-- go to top -->
+
+    <!-- scripts -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+</body>
+
+</html>

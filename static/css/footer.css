@@ -1,0 +1,238 @@
+.footer {
+    margin-top: auto;
+    border-top: 1px solid #6fd7e52c;
+}
+
+.footer .ft-top-sec {
+    justify-content: space-between;
+    align-items: center;
+    margin: 22px auto 0 auto
+}
+
+.footer .infos {
+    width: 44.44%;
+    justify-content: space-between
+}
+
+.footer .picto {
+    margin-top: 15px;
+    max-width: 170px;
+}
+
+.footer .picto img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.footer .typo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 20px;
+    width: max-content;
+}
+
+.footer .baseline {
+    font-weight: 800;
+    color: #fff;
+    margin-top: 10px
+}
+
+.footer .copyright {
+    text-align: center;
+    font-size: 18px;
+    color: var(--secondary);
+    font-weight: 300;
+    margin-top: 40px;
+    display: block;
+    width: 100%;
+    padding-bottom: 7px;
+    user-select: none;
+    /* border-top: 1px solid #e0e0e01f; */
+}
+
+.footer .right {
+    width: 22.22%;
+    justify-content: space-between
+}
+
+.footer .nav a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #4e619a;
+    transition: all .3s ease-in-out
+}
+
+.footer .nav a:hover {
+    color: var(--secondary)
+}
+
+.footer .social {
+    /* margin-top: 40px; */
+}
+
+.sidebar-socials .link,
+.footer .link {
+    border: 1px solid var(--secondary);
+    width: 44px;
+    height: 44px;
+    margin-right: 15px;
+    box-shadow: inset 0 0 0 var(--secondary);
+    transition: all .3s ease-in-out
+}
+
+.sidebar-socials .link:hover,
+.footer .link:hover {
+    box-shadow: inset 0 -54px 0 var(--secondary);
+}
+
+.sidebar-socials .link:hover a,
+.footer .link:hover a {
+    background-color: #000 !important;
+}
+
+.footer .link:last-child {
+    margin-right: 0
+}
+
+.sidebar-socials .link a,
+.footer .link a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+}
+
+.sidebar-socials .ig_icon,
+.footer .ig_icon {
+    background-color: #fff;
+    -webkit-mask: url(../images/others/ig.svg) no-repeat center;
+    mask: url(../images/others/ig.svg) no-repeat center
+}
+
+.sidebar-socials .linkedin,
+.footer .linkedin {
+    background-color: #fff;
+    -webkit-mask: url(../images/others/linkedin.svg) no-repeat center;
+    mask: url(../images/others/linkedin.svg) no-repeat center
+}
+
+.sidebar-socials .insta,
+.footer .insta {
+    background-color: #fff;
+    -webkit-mask: url(../images/others/instagram.svg) no-repeat center;
+    mask: url(../images/others/instagram.svg) no-repeat center
+}
+
+.sidebar-socials .twitter,
+.footer .twitter {
+    background-color: #fff;
+    -webkit-mask: url(../images/others/twitter.svg) no-repeat center;
+    mask: url(../images/others/twitter.svg) no-repeat center
+}
+
+.sidebar-socials .opensea,
+.footer .opensea {
+    background-color: #fff;
+    -webkit-mask: url(../images/others/opensea.svg) no-repeat center;
+    mask: url(../images/others/opensea.svg) no-repeat center
+}
+
+.sidebar-socials .discord,
+.footer .discord {
+    background-color: #fff;
+    -webkit-mask: url(../images/others/discord.svg) no-repeat center;
+    mask: url(../images/others/discord.svg) no-repeat center
+}
+
+.footer-terms {
+    padding: 24px 0 12px 0;
+}
+
+.footer-terms p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+.team-socials .link {
+    border: 1px solid #fff;
+    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+}
+
+.team-socials .link a {
+    width: 38px;
+    height: 38px;
+}
+
+@media screen and (max-width: 960px) {
+    .footer .infos {
+        width: auto;
+        padding-right: 30px
+    }
+    .footer .baseline {
+        margin-top: 20px;
+        line-height: 2.5rem
+    }
+    .footer .copyright {
+        line-height: 2rem;
+    }
+    .footer .right {
+        width: auto
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .footer .link {
+        margin-right: 5px
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer .ft-top-sec {
+        flex-direction: column;
+        margin: 35px auto 20px auto
+    }
+    .footer .right {
+        margin-bottom: 40px
+    }
+    .footer .right .link {
+        margin: 0 10px
+    }
+    .footer .infos {
+        order: 2;
+        padding-right: 0;
+        text-align: center;
+    }
+    .footer .picto {
+        margin: 0 auto;
+    }
+    .footer .social {
+        margin-top: 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer .nav {
+        display: none
+    }
+    .footer .copyright {
+        text-align: center;
+    }
+    .footer a {
+        width: calc(50% - 15px);
+        overflow: hidden
+    }
+    .footer-terms h3 {
+        font-size: 22px;
+        text-align: center;
+    }
+    .footer-terms p {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 13px !important;
+    }
+}
